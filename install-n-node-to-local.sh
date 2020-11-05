@@ -38,7 +38,7 @@ fi
 # Thanks @see: https://superuser.com/a/39840
 if [[ ! $PATH =~ (^|:)${WANTSPATH}(:|$) ]]; then
     echo "ADDING TO LOCAL BIN PATH ADDITION TO $PROFILE_FILE"
-    echo "PATH=${PATH}:${WANTSPATH}" >> "$PROFILE_FILE"
+    echo "PATH='${PATH}:${WANTSPATH}"' >> "$PROFILE_FILE"
     SOMETHING_CHANGED=true
 fi
 if [ -z "$N_PREFIX" ]; then
