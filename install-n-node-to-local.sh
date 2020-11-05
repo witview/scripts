@@ -13,6 +13,7 @@ set -e
 
 echo "INSTALLING PRE-REQUIREMENTS:"
 echo -e "\t git, build-essential and curl"
+echo -e "\t AFTER THAT, INSTALLING NODEJS TO LOCAL USER WITH A N"
 
 # Packages
 sudo apt-get update && sudo apt-get -y install \
@@ -71,6 +72,7 @@ fi
 echo "----->"
 if $SOMETHING_CHANGED; then
     echo "Done! Please restart the current shell, with a command eg. 'exec $SHELL'"
+    echo "Test the installation with a: 'node --version'"
 else
     echo "Already done, it was, yes, is a great band.."
     echo "Other things good could be too, gouda the leastest!"
