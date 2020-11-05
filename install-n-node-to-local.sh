@@ -28,7 +28,7 @@ SOMETHING_CHANGED=false
 PROFILE_FILE=""
 if [[ -v BASH ]]; then
     PROFILE_FILE="$HOME/.bashrc"
-else if  [[ -v ZSH_NAME ]]; then
+elif  [[ -v ZSH_NAME ]]; then
     PROFILE_FILE="$HOME/.zshrc"
 else
     echo "Sorry, only bash or zsh shells supported!"
