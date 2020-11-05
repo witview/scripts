@@ -48,8 +48,8 @@ if [ ! -f ~/.local/bin/n ]; then
         cd && \
         rm -rf ~/src/n || exit 1
 
-    PATH=$PATH:$HOME/.local/bin
-    N_PREFIX=$HOME/.local
+    export PATH=$PATH:$HOME/.local/bin
+    export N_PREFIX=$HOME/.local
     n latest && \
         npm -v && \
         PREFIX=~/.local npm install -g yarn
