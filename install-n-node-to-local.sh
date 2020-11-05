@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# Author: @lsipii
+# See: https://github.com/tj/n
+
+echo "Installing node with N to local paths, extends ~/.profile with related environment values.."
 
 WANTSPATH="$HOME/.local/bin"
 mkdir -p ${WANTSPATH}
