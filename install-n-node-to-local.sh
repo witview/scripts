@@ -1,8 +1,22 @@
 #!/usr/bin/env bash
+# Installs latest NodeJs with N to local paths:
+#    - the local paths refer to a folder "~/.local"
+#    - extends ~/.profile with related environment values.
+#
+# Tailored for ubuntu/debian based linux
+#
 # Author: @lsipii
 # See: https://github.com/tj/n
 
-echo "Installing node with N to local paths, extends ~/.profile with related environment values.."
+# exit when any command fails
+set -e
+
+echo "INSTALLING PRE-REQUIREMENTS"
+# Packages
+sudo apt-get update -q && sudo apt-get -y install \
+    git \
+    build-essential \
+    curl 
 
 WANTSPATH="$HOME/.local/bin"
 mkdir -p ${WANTSPATH}
