@@ -23,15 +23,25 @@ mkdir -p ${WANTSPATH}
 
 SOMETHING_CHANGED=false
 
+PROFILE_FILE=""
+if [[ -v BASH ]]; then
+    PROFILE_FILE="$HOME/.bashrc"
+else if  [[ -v ZSH_NAME ]]; then
+    PROFILE_FILE="$HOME/.zshrc"
+else
+    echo "Sorry, only bash or zsh shells supported!"
+    exit 1
+fi
+
 # Thanks @see: https://superuser.com/a/39840
 if [[ ! $PATH =~ (^|:)${WANTSPATH}(:|$) ]]; then
-    echo "ADDING TO LOCAL BIN PATH ADDITION TO $HOME/.profile"
-    echo "PATH=${PATH}:${WANTSPATH}" >> "$HOME/.profile"
+    echo "ADDING TO LOCAL BIN PATH ADDITION TO $PROFILE_FILE"
+    echo "PATH=${PATH}:${WANTSPATH}" >> "$PROFILE_FILE"
     SOMETHING_CHANGED=true
 fi
 if [ -z "$N_PREFIX" ]; then
-    echo "ADDING N_PREFIX DEFINITION TO $HOME/.profile"
-    echo "export N_PREFIX=$HOME/.local" >> "$HOME/.profile"
+    echo "ADDING N_PREFIX DEFINITION TO $PROFILE_FILE"
+    echo "export N_PREFIX=$HOME/.local" >> "$PROFILE_FILE"
     SOMETHING_CHANGED=true
 fi
 
