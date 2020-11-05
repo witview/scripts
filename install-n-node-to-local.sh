@@ -12,7 +12,7 @@
 set -e
 
 echo "INSTALLING PRE-REQUIREMENTS:"
-echo "\t git, build-essential and curl"
+echo -e "\t git, build-essential and curl"
 
 # Packages
 sudo apt-get update -q && sudo apt-get -y install \
