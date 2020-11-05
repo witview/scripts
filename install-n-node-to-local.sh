@@ -11,7 +11,9 @@
 # exit when any command fails
 set -e
 
-echo "INSTALLING PRE-REQUIREMENTS"
+echo "INSTALLING PRE-REQUIREMENTS:"
+echo "\t git, build-essential and curl"
+
 # Packages
 sudo apt-get update -q && sudo apt-get -y install \
     git \
