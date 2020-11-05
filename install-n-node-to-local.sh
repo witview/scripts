@@ -5,6 +5,8 @@
 #
 # Tailored for ubuntu/debian based linux
 #
+# Install with: curl -s -L https://raw.githubusercontent.com/witview/scripts/main/install-n-node-to-local.sh | bash
+#
 # Author: @lsipii
 # See: https://github.com/tj/n
 
